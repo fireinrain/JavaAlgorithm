@@ -1,12 +1,14 @@
 package com.sunrise.algorithm.chapter1;
 
+
+
 /**
  * @auther: sunrise
  * @date: 2018/8/28 20:24
  * @description:
  * @Gmail: liu575563079@gmail.com
  */
-public class Core {
+public class MathMe {
 
     /**
      * @description: 欧几里得算法
@@ -296,7 +298,6 @@ public class Core {
 
         System.out.println(calculateHarmonicSeries(8));
          */
-
 
     }
 }
