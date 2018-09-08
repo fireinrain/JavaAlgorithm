@@ -1,6 +1,7 @@
 package com.sunrise.algorithm.chapter1;
 
 
+import com.sunrise.stdlib.StdRandom;
 
 /**
  * @auther: sunrise
@@ -298,6 +299,6 @@ public class MathMe {
 
         System.out.println(calculateHarmonicSeries(8));
          */
-
+        System.out.println(StdRandom.getSeed());
     }
 }
