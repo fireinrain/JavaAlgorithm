@@ -10,7 +10,7 @@ package com.sunrise.algorithm.chapter1;
  */
 public class BinarySearchMe {
 
-    public static int findIndex(int key,int[] arrays){
+    public static Integer findIndex(int key,Integer[] arrays){
 
         int start = 0;
         int end = arrays.length - 1;
@@ -33,7 +33,7 @@ public class BinarySearchMe {
     }
 
     public static void main(String[] args) {
-        int[] arrays = new int[]{1,5,8,9,14};
+        Integer[] arrays = new Integer[]{1,5,8,9,14};
 
         int index = BinarySearchMe.findIndex(8, arrays);
         System.out.println(index);

@@ -1,3 +1,5 @@
+package com.sunrise;
+
 public class Main {
 
     public static void main(String[] args) {

@@ -4,7 +4,6 @@ import com.sunrise.stdlib.StdDraw;
 import com.sunrise.stdlib.StdRandom;
 
 import java.util.Arrays;
-import java.util.Random;
 
 /**
  * @auther: sunrise
