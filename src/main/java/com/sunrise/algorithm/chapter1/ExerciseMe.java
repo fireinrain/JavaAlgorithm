@@ -31,12 +31,92 @@ public class ExerciseMe {
 
         //printCharIsInt();
 
-        System.out.println(intToBinaryString(13));
+        //System.out.println(intToBinaryString(13));
 
+        //System.out.println((int)(Math.random()* 10)-1);
+
+        //printSecondOrderArray();
+
+        //printArraysIndex();
+
+    }
+
+    //二维素组的转列 N*M-》M*N
+    public static void printTwoDementionArraysTransition(){
 
     }
 
 
+    //关于数组索引和初始化
+    public static void printArraysIndex() {
+        class PrintsMe {
+            void print1() {
+                int[] a = new int[10];
+                for (int i = 0; i < 10; i++) {
+                    a[i] = 9 - i;
+                }
+
+                for (int k : a
+                        ) {
+                    System.out.println(k);
+                }
+            }
+
+            void print2(){
+                int[] a = new int[10];
+                for (int i = 0; i < 10; i++) {
+                    a[i] = a[a[i]];
+                }
+
+                for (int k : a
+                        ) {
+                    System.out.println(k);
+                }
+            }
+
+            void print3(){
+                for (int i = 0; i <10 ; i++) {
+                    System.out.println(i);
+                }
+            }
+
+        }
+        PrintsMe printsMe = new PrintsMe();
+        printsMe.print1();
+        printsMe.print2();
+        printsMe.print3();
+
+    }
+
+
+    //打印一个二维数组
+    public static void printSecondOrderArray() {
+        boolean[][] arrays = new boolean[5][5];
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
+                int random = (int) (Math.random() * 10 - 1);
+                if (random <= 5) {
+                    arrays[i][j] = false;
+
+                } else {
+                    arrays[i][j] = true;
+                }
+            }
+        }
+
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
+                if (arrays[i][j] == false) {
+                    System.out.print("- ");
+                } else {
+                    System.out.print("* ");
+                }
+            }
+            System.out.println();
+        }
+    }
+
+    //int 转换为二进制字符串
     public static String intToBinaryString(int num) {
         String binaryString = "";
         for (int i = num; i > 0; i /= 2) {
