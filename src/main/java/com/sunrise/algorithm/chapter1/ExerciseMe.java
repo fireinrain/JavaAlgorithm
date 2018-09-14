@@ -29,13 +29,34 @@ public class ExerciseMe {
 
         //printNumbers();
 
+        //printCharIsInt();
 
+        System.out.println(intToBinaryString(13));
 
 
     }
 
 
-    public static void printNumbers(){
+    public static String intToBinaryString(int num) {
+        String binaryString = "";
+        for (int i = num; i > 0; i /= 2) {
+            binaryString = num % 2 + binaryString;
+        }
+        return binaryString;
+
+    }
+
+
+    //字符 的toString 方法 其实是去assic 值
+    private static void printCharIsInt() {
+        System.out.println('b');
+        System.out.println('b' + 'c');
+        System.out.println('b' + 12);
+    }
+
+
+    //打印二重循环
+    public static void printNumbers() {
         int sum = 0;
         for (int i = 1; i < 1000; i++) {
             for (int j = 0; j < 1000; j++) {
@@ -43,11 +64,11 @@ public class ExerciseMe {
             }
         }
 
-        System.out.println("sum is: "+sum);
+        System.out.println("sum is: " + sum);
     }
 
     //打印数列Sum of equal difference series
-    public static void printSequence(){
+    public static void printSequence() {
         int sum = 0;
         for (int i = 1; i < 1000; i++) {
             for (int j = 0; j < i; j++) {
@@ -55,7 +76,7 @@ public class ExerciseMe {
             }
         }
 
-        System.out.println("sum is: "+sum);
+        System.out.println("sum is: " + sum);
     }
 
     //打印 斐波那契数列前15个......数字
