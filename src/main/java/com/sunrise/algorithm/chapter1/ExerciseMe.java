@@ -39,11 +39,141 @@ public class ExerciseMe {
 
         //printArraysIndex();
 
+        //int[][] ints = printTwoDementionArraysTransition(5, 3);
+        //System.out.println("------------------");
+        //transformerArrays(ints);
+
+        //System.out.println(lg(8));
+
+
+        //int a[]={1,2,3,2,3,4,4,5,6};
+        //int M=7;
+        //histogram(a,M);
+
+    }
+
+
+    /**
+     * @description: 编写一个静态方法histogram()，接受一个整型数组a[]和一个整数M为参数并返回一个大小为M的数组，
+     * 其中第i个元素为整数i在参数数组中出现的次数。如果a[]中的值均在0到M-1之间，返回数组中的所有元素之和应该和a.length相等
+     * @param: null
+     * @return:
+     * @auther: sunriseme
+     * @date: 2018/9/16 15:52
+     */
+    public static int[] histogram(int[] a, int M) {
+        int[] result = new int[M];
+        int sum = 0;
+        for (int i = 0; i < a.length; i++) {
+            if ((a[i] <= M - 1) && (a[i] >= 0)) {
+                if (i<M){
+                    result[i] = findNumberFrequency(i, a);
+                }
+                continue;
+            }
+        }
+        for (int i = 0; i < result.length; i++) {
+            sum += result[i];
+        }
+        if (sum == a.length) {
+            System.out.println("符合！");
+            return result;
+        }
+        return result;
+    }
+
+    public static int findNumberFrequency(int x, int[] arrays) {
+        int count = 0;
+        for (int i : arrays) {
+            if (i == x) {
+                count += 1;
+            }
+        }
+        return count;
+    }
+
+
+    /**
+     * @description: 编写一个静态方法lg（），接受一个整型参数N，返回不大于log2N的最大整数（ps：不使用Math库）
+     * @param: null
+     * @return:
+     * @auther: sunriseme
+     * @date: 2018/9/16 15:37
+     */
+    public static int lg(double N) {
+        int k = 0;
+        if (N > 0 && N < 1) {
+            double count = 1;
+            while (count >= N) {
+                count *= 1 / 2.0;
+                k -= 1;
+            }
+            return k + 1;
+        } else if (N >= 1) {
+            int count = 1;
+            while (count <= N) {
+                count *= 2;
+                k += 1;
+            }
+            return k - 1;
+        } else
+            return -1;
+    }
+
+
+    //将一个n*m 的二维素组转换为m*n 的
+    public static void transformerArrays(int[][] arrays) {
+        int n = arrays.length;
+        int m = arrays[0].length;
+        int[][] newArrays = new int[m][n];
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                newArrays[j][i] = arrays[i][j];
+            }
+        }
+
+        betterPrintArrays(newArrays);
     }
 
     //二维素组的转列 N*M-》M*N
-    public static void printTwoDementionArraysTransition(){
+    public static int[][] printTwoDementionArraysTransition(int n, int m) {
+        int[][] nBymArrays = new int[n][m];
 
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                int random = (int) (Math.random() * 100 - 1);
+                nBymArrays[i][j] = random;
+            }
+        }
+
+        betterPrintArrays(n, m, nBymArrays);
+        return nBymArrays;
+    }
+
+    public static void betterPrintArrays(int n, int m, int[][] nBymArrays) {
+        betterPrintArrays(nBymArrays);
+    }
+
+    /**
+     * @description: 更好的打印数组
+     * @param: null
+     * @return:
+     * @auther: sunriseme
+     * @date: 2018/9/16 15:25
+     */
+    public static void betterPrintArrays(int[][] nBymArrays) {
+        int n = nBymArrays.length;
+        int m = nBymArrays[0].length;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                if (j == 0) {
+                    System.out.print("|");
+                }
+                System.out.print(nBymArrays[i][j] + "|");
+            }
+            System.out.println("");
+        }
     }
 
 
@@ -62,7 +192,7 @@ public class ExerciseMe {
                 }
             }
 
-            void print2(){
+            void print2() {
                 int[] a = new int[10];
                 for (int i = 0; i < 10; i++) {
                     a[i] = a[a[i]];
@@ -74,8 +204,8 @@ public class ExerciseMe {
                 }
             }
 
-            void print3(){
-                for (int i = 0; i <10 ; i++) {
+            void print3() {
+                for (int i = 0; i < 10; i++) {
                     System.out.println(i);
                 }
             }
