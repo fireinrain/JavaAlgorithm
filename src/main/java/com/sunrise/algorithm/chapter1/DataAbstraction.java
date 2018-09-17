@@ -21,6 +21,30 @@ public class DataAbstraction {
 
 }
 
+//投掷骰子
+class Rolls{
+    public static void main(String[] args) {
+        //需要用 java Rolls 10
+        //int T = Integer.valueOf(args[0]);
+        int T = 1000;
+        int SIDES = 6;
+
+        Counter[] conters = new Counter[SIDES+1];
+        for (int i = 1; i <=SIDES ; i++) {
+            conters[i] = new Counter(i+"'s");
+        }
+
+        for (int t = 0; t < T; t++) {
+            int result  = StdRandom.uniform(1,SIDES+1);
+            conters[result].increase();
+        }
+
+        for (int i = 1; i <conters.length ; i++) {
+            StdOut.println(conters[i]);
+        }
+    }
+}
+
 
 //投掷硬币
 class Flips{
