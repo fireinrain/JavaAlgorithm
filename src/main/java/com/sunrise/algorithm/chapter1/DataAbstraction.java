@@ -1,7 +1,11 @@
 package com.sunrise.algorithm.chapter1;
 
+import com.sunrise.stdlib.Draw;
+import com.sunrise.stdlib.StdDraw;
 import com.sunrise.stdlib.StdOut;
 import com.sunrise.stdlib.StdRandom;
+
+import java.awt.geom.Point2D;
 
 /**
  * @auther: sunrise
@@ -11,13 +15,33 @@ import com.sunrise.stdlib.StdRandom;
  */
 public class DataAbstraction {
     public static void main(String[] args) {
-        Counter counter = new Counter("gas counter");
+        //Counter counter = new Counter("gas counter");
 
+        System.out.println(isPalindrome("abccba"));
+        System.out.println(isABCOrder(new String[]{"ac", "d", "e"}));
     }
 
+    //检查字符串数组中的元素是否按照标准字母表的排序规则
+    public static boolean isABCOrder(String[] strings){
+        for (int i = 1; i <strings.length ; i++) {
+            if (strings[i-1].compareTo(strings[i])>0){
+                return false;
+            }
+        }
+        return true;
+    }
 
+    // 判断一个字符串是否为回文
+    public static boolean isPalindrome(String string){
+        int length = string.length();
+        for (int i = 0; i <length/2 ; i++) {
+            if (string.charAt(i) == string.charAt(length-1-i)){
+                return true;
+            }
+        }
+        return false;
 
-
+    }
 
 }
 
